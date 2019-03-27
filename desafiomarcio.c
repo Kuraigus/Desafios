@@ -13,18 +13,18 @@ int main(){
     scanf("%d", &n2);
 
     if(n1 < n2){
-      if(((n1 % 2) == 0) && (n1 > 0)){
+      if(((n1 % 2) == 0) && (n1 >= 0)){
         impar = n1 + 1;
         printf("menor impar eh: %d", impar);
-      }else if(((n1 % 2) != 0) && (n1 > 0)){
+      }else if(((n1 % 2) != 0) && (n1 >= 0)){
         impar = n1 + 2;
         printf("menor impar eh: %d", impar);
       }
 
-      if(((n1 % 2) == 0) && (n1 < 0)){
+      if(((n1 % 2) == 0) && (n1 <= 0)){
         impar = n1 + 1;
         printf("menor impar eh: %d", impar);
-      }else if(((n1 % 2) != 0) && (n1 < 0)){
+      }else if(((n1 % 2) != 0) && (n1 <= 0)){
         impar = n1 + 2;
         printf("menor impar eh: %d", impar);
       }
@@ -48,18 +48,18 @@ int main(){
     }
 
     if(n2 < n1){
-      if(((n2 % 2) == 0) && (n2 > 0)){
+      if(((n2 % 2) == 0) && (n2 >= 0)){
         impar = n2 + 1;
         printf("menor impar eh: %d", impar);
-      }else if(((n2 % 2) != 0) && (n2 > 0)){
+      }else if(((n2 % 2) != 0) && (n2 >= 0)){
         impar = n2 + 2;
         printf("menor impar eh: %d", impar);
       }
 
-      if(((n2 % 2) == 0) && (n2 < 0)){
+      if(((n2 % 2) == 0) && (n2 <= 0)){
         impar = n2 + 1;
         printf("menor impar eh: %d", impar);
-      }else if(((n2 % 2) != 0) && (n2 < 0)){
+      }else if(((n2 % 2) != 0) && (n2 <= 0)){
         impar = n2 + 2;
         printf("menor impar eh: %d", impar);
       }
