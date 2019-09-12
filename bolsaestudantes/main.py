@@ -3,7 +3,6 @@
 #e existe empates,dou para o usuario escolher entre as possibilidades, no final printando
 #os aprovados
 
-
 import json
 
 with open("arquivo.json", 'r') as f:
@@ -24,12 +23,13 @@ sort = sorted(participantes_com_media.items(), key=lambda x:x[1], reverse = True
 for i in range(len(sort)):
     nomes[i],notas[i] = sort[i]
 
+msg_aprovados = ("{}º lugar: O aluno(a) {} com a nota: {:.2f}")
 
 if vagas >= len(notas):
-    print("\n")
-    print("Os aprovados foram: ")
+    print("="*29, "APROVADOS", "="*30)
     for i in range(len(notas)):
-        print(i+1, "º lugar: O aluno(a)",nomes[i], " com a nota: ",notas[i])
+        print(msg_aprovados.format(i+1, nomes[i], notas[i]))
+    print("="*70)
     exit()
 
 
@@ -55,9 +55,10 @@ for i in range(len(notas)):
         vagas -= 1
 
 while vagas != 0:
+    print("="*29,"EMPATADOS","="*30)
     for i in range(len(empatados_nota)):
         print("Escreva ", i, " para escolher o aluno ", empatados_nome[i])
-            
+    print('='*70)        
     escolha = int(input())
     if escolha not in range(len(empatados_nota)):
         print("O numero informado não faz parte das possibilidades, tente novamente")
@@ -69,7 +70,7 @@ while vagas != 0:
     vagas -= 1
 
 
-print("\n")
-print("Os aprovados foram: ")
+print("="*29, "APROVADOS", "="*30)
 for i in range(len(aprovados_nota)):
-    print(i+1, "º lugar: O aluno(a)", aprovados_nome[i], " com a nota: ",aprovados_nota[i])
+    print(msg_aprovados.format(i+1, aprovados_nome[i], aprovados_nota[i]))
+print("="*70)
