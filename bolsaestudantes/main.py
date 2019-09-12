@@ -39,14 +39,9 @@ empatados_nota = []
 empatados_nome = []
 
 for i in range(len(notas)):
-    if i == 0:
-        if notas[i] == notas[i + 1]:
-            empatados_nota.append(notas[i])
-            empatados_nome.append(nomes[i])
-    else:
-        if notas[i] == notas[i - 1] or notas[i] == notas[i + 1]:
-            empatados_nota.append(notas[i])
-            empatados_nome.append(nomes[i])
+    if notas[i] == notas[i - 1] or notas[i] == notas[i + 1]:
+        empatados_nota.append(notas[i])
+        empatados_nome.append(nomes[i])
 
 for i in range(len(notas)):
     if notas[i] not in empatados_nota:
