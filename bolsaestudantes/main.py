@@ -29,7 +29,7 @@ if vagas >= len(notas):
     print("\n")
     print("Os aprovados foram: ")
     for i in range(len(notas)):
-        print(nomes[i], " com a nota: ",notas[i])
+        print(i+1, "º lugar: O aluno(a)",nomes[i], " com a nota: ",notas[i])
     exit()
 
 
@@ -48,29 +48,28 @@ for i in range(len(notas)):
             empatados_nota.append(notas[i])
             empatados_nome.append(nomes[i])
 
-while vagas > 0:    
-    for i in range(len(notas)):
-        if notas[i] not in empatados_nota:
-            aprovados_nota.append(notas[i])
-            aprovados_nome.append(nomes[i])
-            vagas -= 1
-
-    while vagas != 0:
-        for i in range(len(empatados_nota)):
-            print("Escreva ", i, " para escolher o aluno ", empatados_nome[i])
-            
-        escolha = int(input())
-        if escolha not in range(len(empatados_nota)):
-            print("O numero informado não faz parte das possibilidades, tente novamente")
-            continue
-        aprovados_nome.append(empatados_nome[escolha])
-        aprovados_nota.append(empatados_nota[escolha])
-        del(empatados_nome[escolha])
-        del(empatados_nota[escolha])
+for i in range(len(notas)):
+    if notas[i] not in empatados_nota:
+        aprovados_nota.append(notas[i])
+        aprovados_nome.append(nomes[i])
         vagas -= 1
+
+while vagas != 0:
+    for i in range(len(empatados_nota)):
+        print("Escreva ", i, " para escolher o aluno ", empatados_nome[i])
+            
+    escolha = int(input())
+    if escolha not in range(len(empatados_nota)):
+        print("O numero informado não faz parte das possibilidades, tente novamente")
+        continue
+    aprovados_nome.append(empatados_nome[escolha])
+    aprovados_nota.append(empatados_nota[escolha])
+    del(empatados_nome[escolha])
+    del(empatados_nota[escolha])
+    vagas -= 1
 
 
 print("\n")
 print("Os aprovados foram: ")
 for i in range(len(aprovados_nota)):
-    print("O aluno(a):", aprovados_nome[i], " com a nota: ",aprovados_nota[i])
+    print(i+1, "º lugar: O aluno(a)", aprovados_nome[i], " com a nota: ",aprovados_nota[i])
