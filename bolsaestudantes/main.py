@@ -5,7 +5,7 @@
 
 import json
 
-with open("final.json", 'r') as f:
+with open("arquivo.json", 'r') as f:
     alunos = json.load(f)
     participantes = alunos['participantes']
     vagas = alunos['quantidadeVagas']
@@ -59,7 +59,7 @@ while vagas > 0:
     for i in range(len(empatados_nota)):
         print("Escreva {} para escolher o aluno(a) {}".format(i+1, empatados_nome[i]))
     print('='*70)        
-    escolha = int(input())
+    escolha = int(input()) - 1
     if escolha not in range(len(empatados_nota)):
         print("O numero informado não faz parte das possibilidades, tente novamente")
         continue
