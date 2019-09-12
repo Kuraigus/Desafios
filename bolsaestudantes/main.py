@@ -57,7 +57,7 @@ for i in range(len(notas)):
 while vagas != 0:
     print("="*29,"EMPATADOS","="*30)
     for i in range(len(empatados_nota)):
-        print("Escreva ", i, " para escolher o aluno ", empatados_nome[i])
+        print("Escreva {} para escolher o aluno(a) {}".format(i+1, empatados_nome[i]))
     print('='*70)        
     escolha = int(input())
     if escolha not in range(len(empatados_nota)):
