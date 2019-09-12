@@ -5,7 +5,7 @@
 
 import json
 
-with open("arquivo.json", 'r') as f:
+with open("final.json", 'r') as f:
     alunos = json.load(f)
     participantes = alunos['participantes']
     vagas = alunos['quantidadeVagas']
@@ -39,9 +39,14 @@ empatados_nota = []
 empatados_nome = []
 
 for i in range(len(notas)):
-    if notas[i] == notas[i - 1] or notas[i] == notas[i + 1]:
-        empatados_nota.append(notas[i])
-        empatados_nome.append(nomes[i])
+    if i < len(notas) - 1:
+        if notas[i] == notas[i - 1] or notas[i] == notas[i + 1]:
+            empatados_nota.append(notas[i])
+            empatados_nome.append(nomes[i])
+    else:
+        if notas[i] == notas[i - 1]:
+            empatados_nota.append(notas[i])
+            empatados_nome.append(nomes[i])
 
 for i in range(len(notas)):
     if notas[i] not in empatados_nota:
@@ -49,7 +54,7 @@ for i in range(len(notas)):
         aprovados_nome.append(nomes[i])
         vagas -= 1
 
-while vagas != 0:
+while vagas > 0:
     print("="*29,"EMPATADOS","="*30)
     for i in range(len(empatados_nota)):
         print("Escreva {} para escolher o aluno(a) {}".format(i+1, empatados_nome[i]))
