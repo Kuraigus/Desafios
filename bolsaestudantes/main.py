@@ -48,13 +48,14 @@ for i in range(len(notas)):
             empatados_nota.append(notas[i])
             empatados_nome.append(nomes[i])
 
+
 for i in range(len(notas)):
-    if notas[i] not in empatados_nota:
+    if notas[i] not in empatados_nota and vagas != 0:
         aprovados_nota.append(notas[i])
-        aprovados_nome.append(nomes[i])
+        aprovados_nome.append(nomes[i]) 9
         vagas -= 1
 
-while vagas > 0:
+while vagas > 0:    
     print("="*29,"EMPATADOS","="*30)
     for i in range(len(empatados_nota)):
         print("Escreva {} para escolher o aluno(a) {}".format(i+1, empatados_nome[i]))
